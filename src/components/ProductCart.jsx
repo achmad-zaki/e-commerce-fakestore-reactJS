@@ -26,7 +26,7 @@ const ProductCart = ({item}) => {
         </div>
         <div className="flex flex-col justify-evenly">
             <div className="font-bold flex-1">
-                ${price}
+                {`$${parseFloat(price * quantity).toFixed(2)}`}
             </div>
             <button onClick={() => deleteCartItem(id)} className="self-end text-gray-400 flex-1">
                 <FaRegTrashAlt size={25}/>

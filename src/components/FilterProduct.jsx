@@ -8,7 +8,7 @@ const FilterProduct = ({sortByPrice, sortByRate}) => {
   const location = useLocation()
 
   return (
-    <div className="container mx-auto flex items-center justify-between px-4 py-7">
+    <div className="container mx-auto flex items-start justify-between px-4 py-7">
       <div className="hidden text-[#5E5E5E] text-sm md:block">283 Product</div>
       <div className="flex flex-wrap items-center gap-3">
         <Link to="/" className={`${location.pathname === "/" ? "text-black" : ""} text-sm text-[#5E5E5E]`}>

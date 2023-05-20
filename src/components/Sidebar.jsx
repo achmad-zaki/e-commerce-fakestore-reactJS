@@ -7,7 +7,7 @@ import { CartContext } from "../context/CartContext";
 
 const Sidebar = () => {
   const { isShow, handleClose } = useContext(SideBarContext);
-  const { cartProduct } = useContext(CartContext);
+  const { cartProduct, total } = useContext(CartContext);
   return (
     <div className={`${
         isShow ? "block" : "hidden"
@@ -33,7 +33,7 @@ const Sidebar = () => {
             <div className="flex flex-col gap-y-2">
                 <div className="flex items-center justify-between">
                     <div className="text-lg font-bold">Total :</div>
-                    <div className="text-lg font-bold">$446.00</div>
+                    <div className="text-lg font-bold">{parseFloat(total).toFixed(2)}</div>
                 </div>
                 <div className="flex items-center justify-between">
                     <div className="text-lg font-bold text-[#9B9B9B]">Shipping</div>

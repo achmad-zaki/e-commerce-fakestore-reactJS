@@ -10,7 +10,7 @@ const ProductItem = ({item}) => {
   return (
     <div className='cursor-pointer'>
       <div className='relative border w-full h-[300px] flex items-center justify-center'>
-        <img src={image} className='max-h-36' alt="" />
+        <img src={image} className='max-h-24 md:max-h-28' alt="" />
         <div className="absolute bottom-5 right-5 flex gap-x-3">
           <Link to={`/product/${id}`} className="border border-black text-black h-10 w-10 flex items-center justify-center rounded-md">
             <AiFillEye size={20}/>
