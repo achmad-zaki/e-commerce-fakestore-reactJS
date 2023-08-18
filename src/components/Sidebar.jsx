@@ -7,14 +7,14 @@ import { CartContext } from "../context/CartContext";
 
 const Sidebar = () => {
   const { isShow, handleClose } = useContext(SideBarContext);
-  const { cartProduct, total } = useContext(CartContext);
+  const { cartProduct, totalPrice, totalItem } = useContext(CartContext);
   return (
     <div className={`${
         isShow ? "block" : "hidden"
       } bg-white fixed top-0 right-0 z-20 w-full md:w-2/4 lg:w-2/5 h-full overflow-y-auto border border-black shadow-lg`}
     >
       <div className="bg-white px-4 flex items-center justify-between border-b border-b-black py-5 sticky top-0">
-        <div className="text-2xl">Your bag (14)</div>
+        <div className="text-2xl">Your bag ({totalItem})</div>
         <button onClick={handleClose}>
           <RxCross2 size={25} />
         </button>
@@ -33,7 +33,7 @@ const Sidebar = () => {
             <div className="flex flex-col gap-y-2">
                 <div className="flex items-center justify-between">
                     <div className="text-lg font-bold">Total :</div>
-                    <div className="text-lg font-bold">{parseFloat(total).toFixed(2)}</div>
+                    <div className="text-lg font-bold">{parseFloat(totalPrice).toFixed(2)}</div>
                 </div>
                 <div className="flex items-center justify-between">
                     <div className="text-lg font-bold text-[#9B9B9B]">Shipping</div>

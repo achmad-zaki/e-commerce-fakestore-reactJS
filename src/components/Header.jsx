@@ -3,11 +3,12 @@ import { FaBars } from "react-icons/fa";
 import IconBasket from "../assets/icons/basket.svg";
 import { useContext } from "react";
 import { SideBarContext } from "../context/SidebarContext";
+import { CartContext } from "../context/CartContext";
 
 const Header = () => {
   const { isShow, setIsShow } = useContext(SideBarContext)
+  const { totalItem } = useContext(CartContext)
   return (
-    <>
       <header className="border-b-2">
         <div className="bg-[#F7F7F7] text-center py-3 text-xs font-normal">
           Free Shipping On All U.S. Orders
@@ -33,9 +34,9 @@ const Header = () => {
             Participle+
           </h1>
           <div onClick={() => setIsShow(!isShow)} className="md:flex md:flex-1 md:justify-end">
-            <div className="relative md:border md:border-[#A0A0A0] md:flex md:items-center md:gap-x-3 md:px-5 md:py-3 cursor-pointer">
-              <div className="absolute top-2 left-[8px] text-white text-sm z-10 md:static md:flex md:gap-x-1 md:text-black">
-                <div>5</div>
+            <div className="relative flex justify-center md:border md:border-[#A0A0A0] md:flex md:items-center md:gap-x-3 md:px-5 md:py-3 cursor-pointer">
+              <div className="absolute top-2 text-white text-sm z-10 md:static md:flex md:gap-x-1 md:text-black">
+                <div>{totalItem}</div>
                 <span className="hidden md:inline">Items</span>
               </div>
               <img src={IconBasket} className="h-8 md:h-5" alt="iconBasket" />
@@ -43,7 +44,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-    </>
   );
 };
 
